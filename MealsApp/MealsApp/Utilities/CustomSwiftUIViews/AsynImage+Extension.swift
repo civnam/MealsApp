@@ -1,6 +1,6 @@
 //
 //  AsynImage+Extension.swift
-//  SearchView
+//  MealsApp
 //
 //  Created by Isaac Dimas on 01/10/23.
 //

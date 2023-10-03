@@ -21,6 +21,8 @@ class MealDetailViewController: UIViewController {
     var idMeal: String?
     var completion: Completion?
     private var presenter = MealsPresenter(mealsApiService: MealsAPI())
+    
+    var calendarEntryPoint: Bool = false
 
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
@@ -33,6 +35,21 @@ class MealDetailViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .customBlue1
         return view
+    }()
+    
+    private var addMealButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(systemName: "plus.circle.fill")
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.backgroundColor = .none
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        button.addTarget(self, action: #selector(selectMeal), for: .touchUpInside)
+        return button
     }()
     
     private var mealImage: UIImageView = {
@@ -93,7 +110,6 @@ class MealDetailViewController: UIViewController {
         textView.textColor = .white
         textView.textAlignment = .justified
         textView.backgroundColor = .none
-        
         textView.isScrollEnabled = false
         return textView
     }()
@@ -153,17 +169,17 @@ class MealDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setupViewConfig()
         setupTabBar(fromWillAppear: true)
-//        let selectButton = UIBarButtonItem(title: "Select", image: UIImage(systemName: "target"), target: self, action: #selector(selectMeal))
-//        self.navigationItem.rightBarButtonItem  = selectButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         setupTabBar(fromWillAppear: false)
     }
-//    @objc func selectMeal() {
-//        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
-//        self.navigationController?.popToRootViewController(animated: true)
-//    }
+    
+    @objc func selectMeal() {
+        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func setupViewConfig() {
         
         customView()
@@ -211,6 +227,7 @@ class MealDetailViewController: UIViewController {
         
         view.addSubview(scrollView)
         scrollView.addSubview(viewOfScrollView)
+        viewOfScrollView.addSubview(addMealButton)
         viewOfScrollView.addSubview(mealImage)
         viewOfScrollView.addSubview(mealTitleLbl)
         viewOfScrollView.addSubview(mealIngredientsLbl)
@@ -272,10 +289,8 @@ class MealDetailViewController: UIViewController {
         self.heightScrollView = viewOfScrollView.heightAnchor.constraint(equalToConstant: 1200)
         self.heightScrollView?.isActive = true
         
-        mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 20).isActive = true
-        mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
-        mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
-        
+        setupTopConstraints()
+
         self.heightMealImage = mealImage.heightAnchor.constraint(equalToConstant: 90)
         self.heightMealImage?.isActive = true
         
@@ -325,6 +340,30 @@ class MealDetailViewController: UIViewController {
 
         self.heightCollectionView = videoView.heightAnchor.constraint(equalToConstant: 150)
         self.heightCollectionView?.isActive = true
+    }
+    
+    private func setupTopConstraints() {
+
+        if calendarEntryPoint {
+
+            addMealButton.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 5).isActive = true
+            addMealButton.trailingAnchor.constraint(equalTo: viewOfScrollView.trailingAnchor, constant: -16).isActive = true
+
+            mealImage.topAnchor.constraint(equalTo: addMealButton.bottomAnchor, constant: 10).isActive = true
+            mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
+            mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+            
+        } else {
+
+            addMealButton.isHidden = true
+
+            mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 10).isActive = true
+            mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
+            mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        }
+
+        self.heightMealImage = mealImage.heightAnchor.constraint(equalToConstant: 90)
+        self.heightMealImage?.isActive = true
     }
     
     private func setupResponsiveSizeScrollView() {

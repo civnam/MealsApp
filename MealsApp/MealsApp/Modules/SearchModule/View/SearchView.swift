@@ -1,19 +1,20 @@
 //
-//  ContentView.swift
-//  SearchView
+//  SearchView.swift
+//  MealsApp
 //
 //  Created by Isaac Dimas on 01/10/23.
 //
 
 import SwiftUI
 
-struct ContentView: View {
+struct SearchView: View {
     
-    @State var categorySelected: String = "Click Here"
-    @State var search = ""
+    @State private var categorySelected: String = "Click Here"
+    @State private var search = ""
     @StateObject var viewModel: MealsViewModel
-    
     var categories: [MealsCategory] = MealsCategory.allCases
+    var calendarEntryPoint: Bool = false
+    var completion: Completion?
     
     var body: some View {
         
@@ -27,7 +28,7 @@ struct ContentView: View {
                             return search.isEmpty ? true : mealName.contains(search)
                         })
                         { meal in
-                            MealSearchCell(meal: meal)
+                            MealSearchCell(meal: meal, calendarEntryPoint: calendarEntryPoint , completion: self.completion)
                                 .cornerRadius(15)
                                 .padding(5)
                                 .shadow(color: .customWhite1, radius: 10)
@@ -64,8 +65,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: MealsViewModel())
+        SearchView(viewModel: MealsViewModel())
     }
 }

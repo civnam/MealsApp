@@ -7,17 +7,18 @@
 
 import SwiftUI
 
-
 struct MealSearchCell: View {
     
     var meal: Meal?
+    var calendarEntryPoint: Bool = false
+    var completion: Completion?
     
     var body: some View {
         
         ZStack{
             
             NavigationLink("", destination:
-                            MealDetailViewRepresentable(idMeal: meal?.idMeal ?? "")
+                            MealDetailViewRepresentable(idMeal: meal?.idMeal ?? "", calendarEntryPoint: calendarEntryPoint, completion: self.completion)
                             .edgesIgnoringSafeArea(.all)
             )
 
@@ -54,19 +55,5 @@ struct MealSearchCell: View {
 struct MealSearchCell_Previews: PreviewProvider {
     static var previews: some View {
         MealSearchCell(meal: Meal(strMeal: "Apam balik", strMealThumb: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", idMeal: "53049"))
-    }
-}
-
-struct MealDetailViewRepresentable: UIViewControllerRepresentable {
-    
-    var idMeal: String
-    
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let mealDetailVC = MealDetailViewController()
-        mealDetailVC.idMeal = idMeal
-        return mealDetailVC
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
 }

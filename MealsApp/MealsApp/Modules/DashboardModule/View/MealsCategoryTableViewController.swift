@@ -1,6 +1,6 @@
 //
 //  MealsCategoryTableViewController.swift
-//  MainApp
+//  MealsApp
 //
 //  Created by Isaac Dimas on 02/10/23.
 //
@@ -12,6 +12,7 @@ class MealsCategoryTableViewController: UIViewController {
     private var presenter = MealsPresenter(mealsApiService: MealsAPI())
     var mealCategory: MealsCategory?
     let heightCell: Int = 90
+    var completion: Completion?
     
     private var mealsOfCategoryTableView: UITableView = {
         let tableView = UITableView()
