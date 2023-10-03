@@ -37,6 +37,16 @@ class MealDetailViewController: UIViewController {
         return view
     }()
     
+    private var detailActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(frame: .zero)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        activityIndicator.color = .white
+        activityIndicator.style = .large
+        return activityIndicator
+    }()
+    
     private var addMealButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -209,6 +219,7 @@ class MealDetailViewController: UIViewController {
     
     private func showViews() {
         
+        detailActivityIndicator.stopAnimating()
         mealImage.isHidden = false
         mealTitleLbl.isHidden = false
         mealIngredientsLbl.isHidden = false
@@ -226,6 +237,7 @@ class MealDetailViewController: UIViewController {
     private func setupViews() {
         
         view.addSubview(scrollView)
+        view.addSubview(detailActivityIndicator)
         scrollView.addSubview(viewOfScrollView)
         viewOfScrollView.addSubview(addMealButton)
         viewOfScrollView.addSubview(mealImage)
@@ -288,6 +300,9 @@ class MealDetailViewController: UIViewController {
 
         self.heightScrollView = viewOfScrollView.heightAnchor.constraint(equalToConstant: 1200)
         self.heightScrollView?.isActive = true
+        
+        detailActivityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        detailActivityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         
         setupTopConstraints()
 
