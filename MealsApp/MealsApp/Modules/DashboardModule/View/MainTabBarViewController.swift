@@ -11,14 +11,14 @@ class MainTabBarViewController : UITabBarController {
     
     // MARK: - Atributes
     private var dashboardViewController: UIViewController
-    private var secondViewController: UIViewController
-    private var thirdViewController: UIViewController
+    private var searchViewController: UIViewController
+    private var calendarViewController: UIViewController
     
     //MARK: - Init of class
-    init(dashboardViewController: UIViewController, secondViewController: UIViewController, thirdViewController: UIViewController) {
+    init(dashboardViewController: UIViewController, searchViewController: UIViewController, calendarViewController: UIViewController) {
         self.dashboardViewController = dashboardViewController
-        self.secondViewController = secondViewController
-        self.thirdViewController = thirdViewController
+        self.searchViewController = searchViewController
+        self.calendarViewController = calendarViewController
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -76,8 +76,7 @@ class MainTabBarViewController : UITabBarController {
     
     func setupViewControllers() {
 
-//        setViewControllers([secondViewController, dashboardViewController, thirdViewController], animated: false)
-        self.viewControllers = [secondViewController, dashboardViewController, thirdViewController]
+        self.viewControllers = [searchViewController, dashboardViewController, calendarViewController]
         guard let items = tabBar.items else { return}
         items[0].title = "Search"
         items[2].title = "Calendar"
