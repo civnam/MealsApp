@@ -40,6 +40,7 @@
 		4C03E1AE2ACC04DD009A5291 /* MealsSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */; };
 		4C03E1AF2ACC04DD009A5291 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AC2ACC04DD009A5291 /* ContentView.swift */; };
 		4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */; };
+		4C03E1B62ACC5D51009A5291 /* MealsCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsSearchCell.swift; sourceTree = "<group>"; };
 		4C03E1AC2ACC04DD009A5291 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsynImage+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsCategoryTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				4C03E1742ACBB102009A5291 /* Cells */,
+				4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */,
 				4C03E1732ACBB102009A5291 /* MealsViewController.swift */,
 				4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */,
 			);
@@ -481,6 +484,7 @@
 				4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */,
 				4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */,
 				4C03E18D2ACBB238009A5291 /* CallBacks.swift in Sources */,
+				4C03E1B62ACC5D51009A5291 /* MealsCategoryTableViewController.swift in Sources */,
 				4C03E17B2ACBB102009A5291 /* MealsDetail.swift in Sources */,
 				4C03E17C2ACBB102009A5291 /* MealsCategory.swift in Sources */,
 				4C03E1AF2ACC04DD009A5291 /* ContentView.swift in Sources */,

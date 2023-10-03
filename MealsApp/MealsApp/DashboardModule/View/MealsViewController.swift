@@ -142,7 +142,7 @@ class MealsViewController: UIViewController {
     }
     
     private func setupNavigationBar(fromWillAppear: Bool) {
-        self.navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
+        navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
     }
 
     private func setupPresenter() {
@@ -326,10 +326,10 @@ extension MealsViewController: UICollectionViewDataSource {
 extension MealsViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let categoryTblCtlr = MealCategoryTableViewController()
-//        let categoryMeal = self.presenter.getCategory(indexPath: indexPath.row)
-//        categoryTblCtlr.mealCategory = categoryMeal
-//        self.present(categoryTblCtlr, animated:true, completion:nil)
+        let categoryTblCtlr = MealsCategoryTableViewController()
+        let categoryMeal = self.presenter.getCategory(indexPath: indexPath.row)
+        categoryTblCtlr.mealCategory = categoryMeal
+        self.navigationController?.pushViewController(categoryTblCtlr, animated: true)
     }
 }
 
