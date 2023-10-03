@@ -132,23 +132,17 @@ class MealsViewController: UIViewController {
         setupConstraints()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupAnimations(fromWillAppear: true)
+    override func viewWillAppear(_ animated: Bool) {
+        setupNavigationBar(fromWillAppear: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupAnimations(fromWillAppear: false)
+        setupNavigationBar(fromWillAppear: false)
     }
     
-    private func setupAnimations(fromWillAppear: Bool) {
+    private func setupNavigationBar(fromWillAppear: Bool) {
         self.navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
-        self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? false : true
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        self.navigationController?.navigationBar.isHidden = false
     }
 
     private func setupPresenter() {
@@ -173,7 +167,7 @@ class MealsViewController: UIViewController {
     
     private func setupConstraints() {
 
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: -35).isActive = true
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 10).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
