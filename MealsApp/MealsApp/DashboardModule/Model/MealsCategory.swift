@@ -48,7 +48,7 @@ public enum MealsCategory: String, CaseIterable {
         case .miscellaneous:
             return "Miscellaneous"
         case .pasta:
-            return "Past"
+            return "Pasta"
         case .pork:
             return "Pork"
         case .seafood:

@@ -131,13 +131,20 @@ class MealsViewController: UIViewController {
         setupViews()
         setupConstraints()
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        setupAnimations()
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        setupAnimations(fromWillAppear: true)
     }
     
-    private func setupAnimations() {
-        self.navigationController?.navigationBar.isHidden = true
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupAnimations(fromWillAppear: false)
+    }
+    
+    private func setupAnimations(fromWillAppear: Bool) {
+        self.navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
+        self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? false : true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -165,10 +172,8 @@ class MealsViewController: UIViewController {
     }
     
     private func setupConstraints() {
-        
-        let viewSafeArea = view.layoutMarginsGuide
-        
-        scrollView.topAnchor.constraint(equalTo: viewSafeArea.topAnchor, constant: 0).isActive = true
+
+        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: -35).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
@@ -243,7 +248,7 @@ class MealsViewController: UIViewController {
         let heightWeekSpecialLbl = self.heightWeekSpecialLbl?.constant ?? 0
         let heightCollectionView = self.heightCollectionView?.constant ?? 0
 
-        totalHeightScrollView = heightLogoImvVw + heightTableView + heightMoreMealsLbl + heightWeekSpecialLbl + heightCollectionView + CGFloat(100)
+        totalHeightScrollView = heightLogoImvVw + heightTableView + heightMoreMealsLbl + heightWeekSpecialLbl + heightCollectionView + CGFloat(140)
 
         if totalHeightScrollView < (screenSize.height) {
             totalHeightScrollView = screenSize.height - 100
