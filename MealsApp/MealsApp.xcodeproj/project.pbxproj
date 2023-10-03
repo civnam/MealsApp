@@ -8,14 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		4C03E1132ACBA98D009A5291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1122ACBA98D009A5291 /* AppDelegate.swift */; };
-		4C03E1152ACBA98D009A5291 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1142ACBA98D009A5291 /* SceneDelegate.swift */; };
-		4C03E1172ACBA98D009A5291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1162ACBA98D009A5291 /* ViewController.swift */; };
-		4C03E11A2ACBA98D009A5291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1182ACBA98D009A5291 /* Main.storyboard */; };
 		4C03E11C2ACBA98E009A5291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E11B2ACBA98E009A5291 /* Assets.xcassets */; };
 		4C03E11F2ACBA98E009A5291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */; };
 		4C03E12A2ACBA98E009A5291 /* MealsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1292ACBA98E009A5291 /* MealsAppTests.swift */; };
 		4C03E1342ACBA98E009A5291 /* MealsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1332ACBA98E009A5291 /* MealsAppUITests.swift */; };
 		4C03E1362ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1352ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift */; };
+		4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E16A2ACBB102009A5291 /* IngredientsTableViewCell.swift */; };
+		4C03E1782ACBB102009A5291 /* MealDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E16B2ACBB102009A5291 /* MealDetailViewController.swift */; };
+		4C03E1792ACBB102009A5291 /* MealsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E16D2ACBB102009A5291 /* MealsPresenter.swift */; };
+		4C03E17A2ACBB102009A5291 /* Meals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E16F2ACBB102009A5291 /* Meals.swift */; };
+		4C03E17B2ACBB102009A5291 /* MealsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1702ACBB102009A5291 /* MealsDetail.swift */; };
+		4C03E17C2ACBB102009A5291 /* MealsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1712ACBB102009A5291 /* MealsCategory.swift */; };
+		4C03E17D2ACBB102009A5291 /* MealsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1732ACBB102009A5291 /* MealsViewController.swift */; };
+		4C03E17E2ACBB102009A5291 /* CategoryMealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1752ACBB102009A5291 /* CategoryMealCell.swift */; };
+		4C03E17F2ACBB102009A5291 /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1762ACBB102009A5291 /* MealCell.swift */; };
+		4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1812ACBB1E3009A5291 /* UIColor+Extension.swift */; };
+		4C03E1862ACBB1E3009A5291 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1822ACBB1E3009A5291 /* UIView+Extension.swift */; };
+		4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1832ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift */; };
+		4C03E1882ACBB1E3009A5291 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1842ACBB1E3009A5291 /* CALayer+Extension.swift */; };
+		4C03E18B2ACBB213009A5291 /* MealsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E18A2ACBB213009A5291 /* MealsAPI.swift */; };
+		4C03E18D2ACBB238009A5291 /* CallBacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E18C2ACBB238009A5291 /* CallBacks.swift */; };
+		4C03E1922ACBBDC3009A5291 /* AnandaBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1912ACBBDC3009A5291 /* AnandaBlack.ttf */; };
+		4C03E1942ACBCBC4009A5291 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1932ACBCBC4009A5291 /* Montserrat-SemiBold.otf */; };
+		4C03E1962ACBD642009A5291 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1952ACBD642009A5291 /* Montserrat-Black.otf */; };
+		4C03E1982ACBD787009A5291 /* MontserratAlternates-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */; };
+		4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,9 +55,6 @@
 /* Begin PBXFileReference section */
 		4C03E10F2ACBA98D009A5291 /* MealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C03E1122ACBA98D009A5291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4C03E1142ACBA98D009A5291 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C03E1162ACBA98D009A5291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C03E1192ACBA98D009A5291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C03E11B2ACBA98E009A5291 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C03E11E2ACBA98E009A5291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C03E1202ACBA98E009A5291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +63,26 @@
 		4C03E12F2ACBA98E009A5291 /* MealsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C03E1332ACBA98E009A5291 /* MealsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAppUITests.swift; sourceTree = "<group>"; };
 		4C03E1352ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4C03E16A2ACBB102009A5291 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		4C03E16B2ACBB102009A5291 /* MealDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealDetailViewController.swift; sourceTree = "<group>"; };
+		4C03E16D2ACBB102009A5291 /* MealsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsPresenter.swift; sourceTree = "<group>"; };
+		4C03E16F2ACBB102009A5291 /* Meals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meals.swift; sourceTree = "<group>"; };
+		4C03E1702ACBB102009A5291 /* MealsDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsDetail.swift; sourceTree = "<group>"; };
+		4C03E1712ACBB102009A5291 /* MealsCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsCategory.swift; sourceTree = "<group>"; };
+		4C03E1732ACBB102009A5291 /* MealsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewController.swift; sourceTree = "<group>"; };
+		4C03E1752ACBB102009A5291 /* CategoryMealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryMealCell.swift; sourceTree = "<group>"; };
+		4C03E1762ACBB102009A5291 /* MealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
+		4C03E1812ACBB1E3009A5291 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1822ACBB1E3009A5291 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1832ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1842ACBB1E3009A5291 /* CALayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		4C03E18A2ACBB213009A5291 /* MealsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsAPI.swift; sourceTree = "<group>"; };
+		4C03E18C2ACBB238009A5291 /* CallBacks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBacks.swift; sourceTree = "<group>"; };
+		4C03E1912ACBBDC3009A5291 /* AnandaBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnandaBlack.ttf; sourceTree = "<group>"; };
+		4C03E1932ACBCBC4009A5291 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		4C03E1952ACBD642009A5291 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
+		4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +133,11 @@
 		4C03E1112ACBA98D009A5291 /* MealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				4C03E19C2ACBDB35009A5291 /* ReusableViews */,
+				4C03E1892ACBB213009A5291 /* NetworkManager */,
+				4C03E1802ACBB1E3009A5291 /* Utilities */,
+				4C03E1672ACBB102009A5291 /* DashboardModule */,
 				4C03E1122ACBA98D009A5291 /* AppDelegate.swift */,
-				4C03E1142ACBA98D009A5291 /* SceneDelegate.swift */,
-				4C03E1162ACBA98D009A5291 /* ViewController.swift */,
-				4C03E1182ACBA98D009A5291 /* Main.storyboard */,
 				4C03E11B2ACBA98E009A5291 /* Assets.xcassets */,
 				4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */,
 				4C03E1202ACBA98E009A5291 /* Info.plist */,
@@ -125,6 +160,110 @@
 				4C03E1352ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift */,
 			);
 			path = MealsAppUITests;
+			sourceTree = "<group>";
+		};
+		4C03E1672ACBB102009A5291 /* DashboardModule */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E16C2ACBB102009A5291 /* Presenter */,
+				4C03E16E2ACBB102009A5291 /* Model */,
+				4C03E1722ACBB102009A5291 /* View */,
+			);
+			path = DashboardModule;
+			sourceTree = "<group>";
+		};
+		4C03E16C2ACBB102009A5291 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E16D2ACBB102009A5291 /* MealsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4C03E16E2ACBB102009A5291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E16F2ACBB102009A5291 /* Meals.swift */,
+				4C03E1702ACBB102009A5291 /* MealsDetail.swift */,
+				4C03E1712ACBB102009A5291 /* MealsCategory.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C03E1722ACBB102009A5291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1742ACBB102009A5291 /* Cells */,
+				4C03E1732ACBB102009A5291 /* MealsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C03E1742ACBB102009A5291 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1752ACBB102009A5291 /* CategoryMealCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4C03E1802ACBB1E3009A5291 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1902ACBBDC3009A5291 /* CustomFonts */,
+				4C03E1812ACBB1E3009A5291 /* UIColor+Extension.swift */,
+				4C03E1822ACBB1E3009A5291 /* UIView+Extension.swift */,
+				4C03E1832ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift */,
+				4C03E1842ACBB1E3009A5291 /* CALayer+Extension.swift */,
+				4C03E18C2ACBB238009A5291 /* CallBacks.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		4C03E1892ACBB213009A5291 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E18A2ACBB213009A5291 /* MealsAPI.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		4C03E1902ACBBDC3009A5291 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */,
+				4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */,
+				4C03E1952ACBD642009A5291 /* Montserrat-Black.otf */,
+				4C03E1932ACBCBC4009A5291 /* Montserrat-SemiBold.otf */,
+				4C03E1912ACBBDC3009A5291 /* AnandaBlack.ttf */,
+			);
+			path = CustomFonts;
+			sourceTree = "<group>";
+		};
+		4C03E19C2ACBDB35009A5291 /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E19D2ACBDB5F009A5291 /* Cells */,
+				4C03E19E2ACBDB6E009A5291 /* Views */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		4C03E19D2ACBDB5F009A5291 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1762ACBB102009A5291 /* MealCell.swift */,
+				4C03E16A2ACBB102009A5291 /* IngredientsTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		4C03E19E2ACBDB6E009A5291 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E16B2ACBB102009A5291 /* MealDetailViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,9 +370,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */,
 				4C03E11F2ACBA98E009A5291 /* LaunchScreen.storyboard in Resources */,
+				4C03E1962ACBD642009A5291 /* Montserrat-Black.otf in Resources */,
+				4C03E1942ACBCBC4009A5291 /* Montserrat-SemiBold.otf in Resources */,
 				4C03E11C2ACBA98E009A5291 /* Assets.xcassets in Resources */,
-				4C03E11A2ACBA98D009A5291 /* Main.storyboard in Resources */,
+				4C03E1982ACBD787009A5291 /* MontserratAlternates-Bold.otf in Resources */,
+				4C03E1922ACBBDC3009A5291 /* AnandaBlack.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,9 +401,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C03E1172ACBA98D009A5291 /* ViewController.swift in Sources */,
+				4C03E17F2ACBB102009A5291 /* MealCell.swift in Sources */,
+				4C03E1862ACBB1E3009A5291 /* UIView+Extension.swift in Sources */,
+				4C03E17D2ACBB102009A5291 /* MealsViewController.swift in Sources */,
+				4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */,
+				4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */,
+				4C03E18B2ACBB213009A5291 /* MealsAPI.swift in Sources */,
+				4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */,
+				4C03E18D2ACBB238009A5291 /* CallBacks.swift in Sources */,
+				4C03E17B2ACBB102009A5291 /* MealsDetail.swift in Sources */,
+				4C03E17C2ACBB102009A5291 /* MealsCategory.swift in Sources */,
+				4C03E1882ACBB1E3009A5291 /* CALayer+Extension.swift in Sources */,
+				4C03E1792ACBB102009A5291 /* MealsPresenter.swift in Sources */,
+				4C03E17E2ACBB102009A5291 /* CategoryMealCell.swift in Sources */,
 				4C03E1132ACBA98D009A5291 /* AppDelegate.swift in Sources */,
-				4C03E1152ACBA98D009A5291 /* SceneDelegate.swift in Sources */,
+				4C03E1782ACBB102009A5291 /* MealDetailViewController.swift in Sources */,
+				4C03E17A2ACBB102009A5291 /* Meals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,14 +453,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C03E1182ACBA98D009A5291 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C03E1192ACBA98D009A5291 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -442,7 +590,6 @@
 				INFOPLIST_FILE = MealsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -471,7 +618,6 @@
 				INFOPLIST_FILE = MealsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
