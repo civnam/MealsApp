@@ -89,7 +89,7 @@ class MealDetailViewController: UIViewController {
        let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = ""
-        textView.font = UIFont(name: "Raleway-Medium", size: 24)
+        textView.font = UIFont(name: "Raleway-Medium", size: 18)
         textView.textColor = .white
         textView.textAlignment = .justified
         textView.backgroundColor = .none

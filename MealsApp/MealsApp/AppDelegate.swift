@@ -15,11 +15,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let navigationController = UINavigationController()
-        let viewController = MealsViewController()
-        navigationController.pushViewController(viewController, animated: true)
+        let mealsVC = MealsViewController()
+        let dashboardNavContrl = UINavigationController()
+        
+        let secondVC = SecondViewController()
+        let secondNavContrl = UINavigationController()
+
+        
+        dashboardNavContrl.pushViewController(mealsVC, animated: true)
+        secondNavContrl.pushViewController(secondVC, animated: true)
+        
+        let tabBarController = MainTabBarViewController(dashboardViewController: dashboardNavContrl,
+                                                        secondViewController: secondNavContrl,
+                                                        thirdViewController: ThirdViewController()
+        )
+
+        tabBarController.selectedIndex = 1
+        
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
         return true
