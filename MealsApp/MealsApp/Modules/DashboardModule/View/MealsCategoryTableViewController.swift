@@ -25,9 +25,20 @@ class MealsCategoryTableViewController: UIViewController {
         return tableView
     }()
     
+    private var categoryActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(frame: .zero)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        activityIndicator.color = .white
+        activityIndicator.style = .large
+        return activityIndicator
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupViews()
         setupTableView()
         setupConstraints()
         setupPresenter()
@@ -54,9 +65,13 @@ class MealsCategoryTableViewController: UIViewController {
         navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? true : false
     }
     
+    private func setupViews() {
+        view.addSubview(mealsOfCategoryTableView)
+        view.addSubview(categoryActivityIndicator)
+    }
+    
     private func setupTableView() {
         
-        view.addSubview(mealsOfCategoryTableView)
         mealsOfCategoryTableView.register(MealCell.self, forCellReuseIdentifier: MealCell.identifier)
         mealsOfCategoryTableView.delegate = self
         mealsOfCategoryTableView.dataSource = self
@@ -65,6 +80,9 @@ class MealsCategoryTableViewController: UIViewController {
     }
     
     private func setupConstraints() {
+        
+        categoryActivityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        categoryActivityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         
         mealsOfCategoryTableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
         mealsOfCategoryTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
@@ -83,6 +101,7 @@ extension MealsCategoryTableViewController: MealsViewDelegate {
     func refreshMealsData() {
         DispatchQueue.main.async {
             self.mealsOfCategoryTableView.reloadData()
+            self.categoryActivityIndicator.stopAnimating()
         }
     }
 }
