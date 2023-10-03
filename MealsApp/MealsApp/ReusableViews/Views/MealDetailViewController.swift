@@ -152,13 +152,13 @@ class MealDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupViewConfig()
-        
+        setupTabBar(fromWillAppear: true)
 //        let selectButton = UIBarButtonItem(title: "Select", image: UIImage(systemName: "target"), target: self, action: #selector(selectMeal))
 //        self.navigationItem.rightBarButtonItem  = selectButton
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        setupNavAndTabBar(fromWillAppear: false)
+        setupTabBar(fromWillAppear: false)
     }
 //    @objc func selectMeal() {
 //        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
@@ -175,8 +175,8 @@ class MealDetailViewController: UIViewController {
         view.backgroundColor = .customBlue1
     }
     
-    private func setupNavAndTabBar(fromWillAppear: Bool) {
-        self.navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
+    private func setupTabBar(fromWillAppear: Bool) {
+        
         self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? true : false
     }
     
