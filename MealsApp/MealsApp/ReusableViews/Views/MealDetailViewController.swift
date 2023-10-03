@@ -157,6 +157,9 @@ class MealDetailViewController: UIViewController {
 //        self.navigationItem.rightBarButtonItem  = selectButton
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        setupNavAndTabBar(fromWillAppear: false)
+    }
 //    @objc func selectMeal() {
 //        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
 //        self.navigationController?.popToRootViewController(animated: true)
@@ -170,6 +173,11 @@ class MealDetailViewController: UIViewController {
     private func customView() {
         navigationController?.navigationBar.backgroundColor = .customBlue1
         view.backgroundColor = .customBlue1
+    }
+    
+    private func setupNavAndTabBar(fromWillAppear: Bool) {
+        self.navigationController?.navigationBar.isHidden = fromWillAppear ? true : false
+        self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? true : false
     }
     
     private func hideViews() {
@@ -264,7 +272,7 @@ class MealDetailViewController: UIViewController {
         self.heightScrollView = viewOfScrollView.heightAnchor.constraint(equalToConstant: 1200)
         self.heightScrollView?.isActive = true
         
-        mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 40).isActive = true
+        mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 20).isActive = true
         mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
         mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
         

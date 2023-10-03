@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 extension UIColor {
     
@@ -44,4 +45,17 @@ extension UIColor {
         }
         return nil
     }
+}
+
+extension Color {
+    
+    //static let customWhite1: Color = Color(red: 235/255, green: 229/255, blue: 206/255)
+    static let customRed1 = Color(red: 42/255, green: 8/255, blue: 7/255)
+    static let customRed2 = Color(red: 123/255, green: 54/255, blue: 34/255)
+    static let customYellow1 = Color(red: 184/255, green: 136/255, blue: 73/255)
+    static let customYellow2 = Color(red: 239/255, green: 191/255, blue: 65/255)
+    static let customOrange1 = Color(red: 187/255, green: 49/255, blue: 40/255)
+    static let customOrange2 = Color(red: 226/255, green: 106/255, blue: 51/255)
+    static let customBlue1 = Color(red: 38/255, green: 68/255, blue: 142/255)
+    static let customWhite1 = Color(red: 235/255, green: 229/255, blue: 206/255)
 }

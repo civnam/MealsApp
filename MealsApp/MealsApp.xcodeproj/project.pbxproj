@@ -34,8 +34,12 @@
 		4C03E1982ACBD787009A5291 /* MontserratAlternates-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */; };
 		4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */; };
 		4C03E1A12ACBE807009A5291 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */; };
-		4C03E1A32ACBEBF1009A5291 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A22ACBEBF0009A5291 /* SecondViewController.swift */; };
+		4C03E1A32ACBEBF1009A5291 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A22ACBEBF0009A5291 /* SearchViewController.swift */; };
 		4C03E1A52ACBEBF7009A5291 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A42ACBEBF7009A5291 /* ThirdViewController.swift */; };
+		4C03E1AD2ACC04DD009A5291 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */; };
+		4C03E1AE2ACC04DD009A5291 /* MealsSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */; };
+		4C03E1AF2ACC04DD009A5291 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AC2ACC04DD009A5291 /* ContentView.swift */; };
+		4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,8 +91,12 @@
 		4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
 		4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
 		4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
-		4C03E1A22ACBEBF0009A5291 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		4C03E1A22ACBEBF0009A5291 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		4C03E1A42ACBEBF7009A5291 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsSearchCell.swift; sourceTree = "<group>"; };
+		4C03E1AC2ACC04DD009A5291 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsynImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +153,9 @@
 				4C03E1892ACBB213009A5291 /* NetworkManager */,
 				4C03E1802ACBB1E3009A5291 /* Utilities */,
 				4C03E1672ACBB102009A5291 /* DashboardModule */,
+				4C03E1A62ACC04DD009A5291 /* SearchModule */,
 				4C03E19F2ACBE798009A5291 /* Resources */,
-				4C03E1A22ACBEBF0009A5291 /* SecondViewController.swift */,
+				4C03E1A22ACBEBF0009A5291 /* SearchViewController.swift */,
 				4C03E1A42ACBEBF7009A5291 /* ThirdViewController.swift */,
 			);
 			path = MealsApp;
@@ -218,6 +227,7 @@
 		4C03E1802ACBB1E3009A5291 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4C03E1B22ACC0553009A5291 /* CustomSwiftUIViews */,
 				4C03E1902ACBBDC3009A5291 /* CustomFonts */,
 				4C03E1812ACBB1E3009A5291 /* UIColor+Extension.swift */,
 				4C03E1822ACBB1E3009A5291 /* UIView+Extension.swift */,
@@ -281,6 +291,48 @@
 				4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C03E1A62ACC04DD009A5291 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1A72ACC04DD009A5291 /* ViewModel */,
+				4C03E1A92ACC04DD009A5291 /* View */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		4C03E1A72ACC04DD009A5291 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C03E1A92ACC04DD009A5291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1AA2ACC04DD009A5291 /* Cell */,
+				4C03E1AC2ACC04DD009A5291 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C03E1AA2ACC04DD009A5291 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4C03E1B22ACC0553009A5291 /* CustomSwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */,
+			);
+			path = CustomSwiftUIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -426,17 +478,21 @@
 				4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */,
 				4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */,
 				4C03E18B2ACBB213009A5291 /* MealsAPI.swift in Sources */,
+				4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */,
 				4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */,
 				4C03E18D2ACBB238009A5291 /* CallBacks.swift in Sources */,
 				4C03E17B2ACBB102009A5291 /* MealsDetail.swift in Sources */,
 				4C03E17C2ACBB102009A5291 /* MealsCategory.swift in Sources */,
+				4C03E1AF2ACC04DD009A5291 /* ContentView.swift in Sources */,
 				4C03E1882ACBB1E3009A5291 /* CALayer+Extension.swift in Sources */,
-				4C03E1A32ACBEBF1009A5291 /* SecondViewController.swift in Sources */,
+				4C03E1AD2ACC04DD009A5291 /* MealsViewModel.swift in Sources */,
+				4C03E1A32ACBEBF1009A5291 /* SearchViewController.swift in Sources */,
 				4C03E1792ACBB102009A5291 /* MealsPresenter.swift in Sources */,
 				4C03E17E2ACBB102009A5291 /* CategoryMealCell.swift in Sources */,
 				4C03E1132ACBA98D009A5291 /* AppDelegate.swift in Sources */,
 				4C03E1782ACBB102009A5291 /* MealDetailViewController.swift in Sources */,
 				4C03E17A2ACBB102009A5291 /* Meals.swift in Sources */,
+				4C03E1AE2ACC04DD009A5291 /* MealsSearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +668,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -640,7 +696,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

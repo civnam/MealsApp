@@ -6,27 +6,33 @@
 //
 
 import UIKit
+import SwiftUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    private let viewModel = MealsViewModel()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         let mealsVC = MealsViewController()
-        let dashboardNavContrl = UINavigationController()
+        let dashboardNavCtr = UINavigationController()
         
-        let secondVC = SecondViewController()
-        let secondNavContrl = UINavigationController()
-
+        let searchNavCtr = UINavigationController()
         
-        dashboardNavContrl.pushViewController(mealsVC, animated: true)
-        secondNavContrl.pushViewController(secondVC, animated: true)
+        let searchView = ContentView(viewModel: self.viewModel)
+        let searchVC = UIHostingController(rootView: searchView)
+        searchVC.view.backgroundColor = .clear
+        searchVC.modalPresentationStyle = .fullScreen
         
-        let tabBarController = MainTabBarViewController(dashboardViewController: dashboardNavContrl,
-                                                        secondViewController: secondNavContrl,
+        dashboardNavCtr.pushViewController(mealsVC, animated: true)
+        searchNavCtr.pushViewController(searchVC, animated: true)
+        
+        let tabBarController = MainTabBarViewController(dashboardViewController: dashboardNavCtr,
+                                                        secondViewController: searchVC,
                                                         thirdViewController: ThirdViewController()
         )
 

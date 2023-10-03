@@ -13,8 +13,12 @@ struct MealsAPIResponse: Decodable {
 }
 
 // MARK: - Meals Model
-struct Meal: Decodable {
+struct Meal: Decodable, Identifiable {
     let strMeal: String?
     let strMealThumb: String?
     let idMeal: String?
+    
+    public var id: String {
+        self.idMeal ?? ""
+    }
 }
