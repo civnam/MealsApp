@@ -22,7 +22,7 @@ extension UIImageView {
         }
         
         guard let url = URL(string: urlStr) else {
-            self.image = UIImage(systemName: "house")
+            self.image = UIImage(named: "UnvailablePhoto")
             return
         }
         

@@ -13,6 +13,7 @@ class MealCell: UITableViewCell {
     
     private var mealNameLbl: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

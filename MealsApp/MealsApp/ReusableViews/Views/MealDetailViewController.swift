@@ -7,11 +7,12 @@
 
 import UIKit
 import WebKit
+import youtube_ios_player_helper
 
 class MealDetailViewController: UIViewController {
 
     var heightTableView: NSLayoutConstraint?
-    var heightCollectionView: NSLayoutConstraint?
+    var heightVideoView: NSLayoutConstraint?
     var heightScrollView: NSLayoutConstraint?
     var heightInstructionsTxtVw: NSLayoutConstraint?
     var heightMealImage: NSLayoutConstraint?
@@ -21,6 +22,9 @@ class MealDetailViewController: UIViewController {
     var idMeal: String?
     var completion: Completion?
     private var presenter = MealsPresenter(mealsApiService: MealsAPI())
+    private var youtubeUrl = "https://www.youtube.com/watch?v="
+    
+    var calendarEntryPoint: Bool = false
 
     private var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
@@ -35,8 +39,34 @@ class MealDetailViewController: UIViewController {
         return view
     }()
     
+    private var detailActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView(frame: .zero)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        activityIndicator.color = .white
+        activityIndicator.style = .large
+        return activityIndicator
+    }()
+    
+    private var addMealButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        let image = UIImage(systemName: "plus.circle.fill")
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.contentVerticalAlignment = .fill
+        button.contentHorizontalAlignment = .fill
+        button.backgroundColor = .none
+        button.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        button.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        button.addTarget(self, action: #selector(selectMeal), for: .touchUpInside)
+        return button
+    }()
+    
     private var mealImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.isHidden = true
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.applyWhiteShadow()
@@ -51,6 +81,7 @@ class MealDetailViewController: UIViewController {
         label.text = text
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.isHidden = true
         label.backgroundColor = .customYellow2
         label.textAlignment = .center
         label.layer.applyWhiteShadow()
@@ -66,6 +97,7 @@ class MealDetailViewController: UIViewController {
         label.font = UIFont(name: "MontserratAlternates-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.layer.isHidden = true
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
@@ -79,6 +111,7 @@ class MealDetailViewController: UIViewController {
         label.font = UIFont(name: "MontserratAlternates-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.isHidden = true
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
@@ -89,11 +122,10 @@ class MealDetailViewController: UIViewController {
        let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = ""
-        textView.font = UIFont(name: "Raleway-Medium", size: 24)
+        textView.font = UIFont(name: "Raleway-Medium", size: 18)
         textView.textColor = .white
         textView.textAlignment = .justified
         textView.backgroundColor = .none
-        
         textView.isScrollEnabled = false
         return textView
     }()
@@ -102,6 +134,7 @@ class MealDetailViewController: UIViewController {
         let label = UILabel()
         label.text = "Tutorial for the meal"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
         return label
     }()
     
@@ -109,6 +142,7 @@ class MealDetailViewController: UIViewController {
         let view = UIView(frame: .zero)
         view.backgroundColor = .none
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
         view.layer.applyWhiteShadow()
         return view
     }()
@@ -126,18 +160,21 @@ class MealDetailViewController: UIViewController {
     
     private var videoView: UIView = {
         let view = UIView(frame: .zero)
+        view.backgroundColor = .customYellow2
+        view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.applyWhiteShadow()
         view.backgroundColor = .none
         return view
     }()
     
-    private var playerView: WKWebView = {
-        let webView = WKWebView()
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.layer.applyWhiteShadow()
-        webView.layer.masksToBounds = true
-        return webView
+    private var playerView: YTPlayerView = {
+        let playerView = YTPlayerView()
+        playerView.load(withVideoId: "")
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        playerView.layer.applyWhiteShadow()
+        playerView.layer.masksToBounds = true
+        return playerView
     }()
     
     override func viewDidLoad() {
@@ -152,19 +189,23 @@ class MealDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         setupViewConfig()
-        
-//        let selectButton = UIBarButtonItem(title: "Select", image: UIImage(systemName: "target"), target: self, action: #selector(selectMeal))
-//        self.navigationItem.rightBarButtonItem  = selectButton
+        setupTabBar(fromWillAppear: true)
     }
     
-//    @objc func selectMeal() {
-//        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
-//        self.navigationController?.popToRootViewController(animated: true)
-//    }
+    override func viewWillDisappear(_ animated: Bool) {
+        setupTabBar(fromWillAppear: false)
+    }
+    
+    @objc func selectMeal() {
+        self.completion?(mealTitleLbl.text ?? "Undefined", idMeal ?? "")
+        self.navigationController?.popToRootViewController(animated: true)
+    }
+    
     private func setupViewConfig() {
         
-        customView()
-        hideViews()
+        if !calendarEntryPoint {
+            customView()
+        }
     }
     
     private func customView() {
@@ -172,19 +213,14 @@ class MealDetailViewController: UIViewController {
         view.backgroundColor = .customBlue1
     }
     
-    private func hideViews() {
+    private func setupTabBar(fromWillAppear: Bool) {
         
-        mealImage.isHidden = true
-        mealTitleLbl.isHidden = true
-        mealIngredientsLbl.isHidden = true
-        mainView.isHidden = true
-        mealInstructionsLbl.isHidden = true
-        videoView.isHidden = true
-        view.isUserInteractionEnabled = false
+        self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? true : false
     }
     
     private func showViews() {
         
+        detailActivityIndicator.stopAnimating()
         mealImage.isHidden = false
         mealTitleLbl.isHidden = false
         mealIngredientsLbl.isHidden = false
@@ -202,7 +238,9 @@ class MealDetailViewController: UIViewController {
     private func setupViews() {
         
         view.addSubview(scrollView)
+        view.addSubview(detailActivityIndicator)
         scrollView.addSubview(viewOfScrollView)
+        viewOfScrollView.addSubview(addMealButton)
         viewOfScrollView.addSubview(mealImage)
         viewOfScrollView.addSubview(mealTitleLbl)
         viewOfScrollView.addSubview(mealIngredientsLbl)
@@ -241,9 +279,8 @@ class MealDetailViewController: UIViewController {
     }
     
     private func updatePlayerVideo(strUrl: String) {
-        guard let url = URL(string: "https://www.youtube.com/embed/watch?v=6R8ffRRJcrg") else { return }
-        let youtubeRequest = URLRequest(url: url)
-        playerView.load(youtubeRequest)
+        let videoId = strUrl.replacingOccurrences(of: youtubeUrl, with: "")
+        playerView.load(withVideoId: videoId)
     }
     
     private func setupConstraints() {
@@ -264,10 +301,11 @@ class MealDetailViewController: UIViewController {
         self.heightScrollView = viewOfScrollView.heightAnchor.constraint(equalToConstant: 1200)
         self.heightScrollView?.isActive = true
         
-        mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 40).isActive = true
-        mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
-        mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        detailActivityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor, constant: 0).isActive = true
+        detailActivityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 0).isActive = true
         
+        setupTopConstraints()
+
         self.heightMealImage = mealImage.heightAnchor.constraint(equalToConstant: 90)
         self.heightMealImage?.isActive = true
         
@@ -302,6 +340,7 @@ class MealDetailViewController: UIViewController {
         
         self.heightInstructionsTxtVw = mealInstructionsTxtVw.heightAnchor.constraint(equalToConstant: 200)
         self.heightInstructionsTxtVw?.isActive = true
+        
         mealInstructionsTxtVw.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
         mealInstructionsTxtVw.trailingAnchor.constraint(equalTo: viewOfScrollView.trailingAnchor, constant: -16).isActive = true
         mealInstructionsTxtVw.topAnchor.constraint(equalTo: mealInstructionsLbl.bottomAnchor, constant: 8).isActive = true
@@ -315,8 +354,32 @@ class MealDetailViewController: UIViewController {
         playerView.leadingAnchor.constraint(equalTo: videoView.leadingAnchor, constant: 0).isActive = true
         playerView.trailingAnchor.constraint(equalTo: videoView.trailingAnchor, constant: 0).isActive = true
 
-        self.heightCollectionView = videoView.heightAnchor.constraint(equalToConstant: 150)
-        self.heightCollectionView?.isActive = true
+        self.heightVideoView = videoView.heightAnchor.constraint(equalToConstant: 250)
+        self.heightVideoView?.isActive = true
+    }
+    
+    private func setupTopConstraints() {
+
+        if calendarEntryPoint {
+
+            addMealButton.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 5).isActive = true
+            addMealButton.trailingAnchor.constraint(equalTo: viewOfScrollView.trailingAnchor, constant: -16).isActive = true
+
+            mealImage.topAnchor.constraint(equalTo: addMealButton.bottomAnchor, constant: 10).isActive = true
+            mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
+            mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+            
+        } else {
+
+            addMealButton.isHidden = true
+
+            mealImage.topAnchor.constraint(equalTo: viewOfScrollView.topAnchor, constant: 10).isActive = true
+            mealImage.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
+            mealImage.widthAnchor.constraint(equalToConstant: 90).isActive = true
+        }
+
+        self.heightMealImage = mealImage.heightAnchor.constraint(equalToConstant: 90)
+        self.heightMealImage?.isActive = true
     }
     
     private func setupResponsiveSizeScrollView() {
@@ -326,7 +389,7 @@ class MealDetailViewController: UIViewController {
         let heightTableView = self.heightTableView?.constant ?? 0
         let heightMealIngredientsLbl = self.heightMealIngredientsLbl?.constant ?? 0
         let heightInstructionsTxtVw = self.heightInstructionsTxtVw?.constant ?? 0
-        let heightCollectionView = self.heightCollectionView?.constant ?? 0
+        let heightCollectionView = self.heightVideoView?.constant ?? 0
 
         let screenSize = UIScreen.main.bounds
 

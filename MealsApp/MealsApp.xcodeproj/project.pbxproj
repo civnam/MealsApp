@@ -3,14 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4C03E1132ACBA98D009A5291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1122ACBA98D009A5291 /* AppDelegate.swift */; };
 		4C03E11C2ACBA98E009A5291 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E11B2ACBA98E009A5291 /* Assets.xcassets */; };
 		4C03E11F2ACBA98E009A5291 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */; };
-		4C03E12A2ACBA98E009A5291 /* MealsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1292ACBA98E009A5291 /* MealsAppTests.swift */; };
+		4C03E12A2ACBA98E009A5291 /* MealsAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1292ACBA98E009A5291 /* MealsAPITests.swift */; };
 		4C03E1342ACBA98E009A5291 /* MealsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1332ACBA98E009A5291 /* MealsAppUITests.swift */; };
 		4C03E1362ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1352ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift */; };
 		4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E16A2ACBB102009A5291 /* IngredientsTableViewCell.swift */; };
@@ -33,6 +33,31 @@
 		4C03E1962ACBD642009A5291 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1952ACBD642009A5291 /* Montserrat-Black.otf */; };
 		4C03E1982ACBD787009A5291 /* MontserratAlternates-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */; };
 		4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */; };
+		4C03E1A12ACBE807009A5291 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */; };
+		4C03E1AD2ACC04DD009A5291 /* MealsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */; };
+		4C03E1AE2ACC04DD009A5291 /* MealsSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */; };
+		4C03E1AF2ACC04DD009A5291 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1AC2ACC04DD009A5291 /* SearchView.swift */; };
+		4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */; };
+		4C03E1B62ACC5D51009A5291 /* MealsCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */; };
+		4C03E1C92ACC6209009A5291 /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1BA2ACC6209009A5291 /* EventManager.swift */; };
+		4C03E1CA2ACC6209009A5291 /* DayEventViewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1BD2ACC6209009A5291 /* DayEventViewRow.swift */; };
+		4C03E1CB2ACC6209009A5291 /* EventsCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1BE2ACC6209009A5291 /* EventsCalendarView.swift */; };
+		4C03E1CC2ACC6209009A5291 /* DaysEventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1BF2ACC6209009A5291 /* DaysEventListView.swift */; };
+		4C03E1CD2ACC6209009A5291 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1C02ACC6209009A5291 /* CalendarView.swift */; };
+		4C03E1CE2ACC6209009A5291 /* EventFormType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1C12ACC6209009A5291 /* EventFormType.swift */; };
+		4C03E1CF2ACC6209009A5291 /* EventFormViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1C42ACC6209009A5291 /* EventFormViewModel.swift */; };
+		4C03E1D02ACC6209009A5291 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1C62ACC6209009A5291 /* Event.swift */; };
+		4C03E1D12ACC6209009A5291 /* EventFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1C82ACC6209009A5291 /* EventFormView.swift */; };
+		4C03E1D42ACC6256009A5291 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D32ACC6256009A5291 /* Date+Extension.swift */; };
+		4C03E1D62ACC629C009A5291 /* MealDetailViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D52ACC629C009A5291 /* MealDetailViewRepresentable.swift */; };
+		4C03E1D92ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */; };
+		4CB9563B2ACCD2A500322937 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956382ACCD2A500322937 /* Card.swift */; };
+		4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956392ACCD2A500322937 /* CardView.swift */; };
+		4CB9563D2ACCD2A500322937 /* IntroCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */; };
+		4CB956432ACCF1B500322937 /* IntroLottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */; };
+		4CB956482ACCF84D00322937 /* intro_MealsApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB956472ACCF84D00322937 /* intro_MealsApp.json */; };
+		4CB9564B2ACD089400322937 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9564A2ACD089400322937 /* Coordinator.swift */; };
+		4CB956532ACDEF3F00322937 /* MealsAPIModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956522ACDEF3F00322937 /* MealsAPIModelResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +84,7 @@
 		4C03E11E2ACBA98E009A5291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C03E1202ACBA98E009A5291 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C03E1252ACBA98E009A5291 /* MealsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		4C03E1292ACBA98E009A5291 /* MealsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAppTests.swift; sourceTree = "<group>"; };
+		4C03E1292ACBA98E009A5291 /* MealsAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAPITests.swift; sourceTree = "<group>"; };
 		4C03E12F2ACBA98E009A5291 /* MealsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C03E1332ACBA98E009A5291 /* MealsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAppUITests.swift; sourceTree = "<group>"; };
 		4C03E1352ACBA98E009A5291 /* MealsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -83,6 +108,31 @@
 		4C03E1952ACBD642009A5291 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
 		4C03E1972ACBD787009A5291 /* MontserratAlternates-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MontserratAlternates-Bold.otf"; sourceTree = "<group>"; };
 		4C03E1992ACBD8B7009A5291 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsViewModel.swift; sourceTree = "<group>"; };
+		4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsSearchCell.swift; sourceTree = "<group>"; };
+		4C03E1AC2ACC04DD009A5291 /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AsynImage+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealsCategoryTableViewController.swift; sourceTree = "<group>"; };
+		4C03E1BA2ACC6209009A5291 /* EventManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		4C03E1BD2ACC6209009A5291 /* DayEventViewRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayEventViewRow.swift; sourceTree = "<group>"; };
+		4C03E1BE2ACC6209009A5291 /* EventsCalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCalendarView.swift; sourceTree = "<group>"; };
+		4C03E1BF2ACC6209009A5291 /* DaysEventListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaysEventListView.swift; sourceTree = "<group>"; };
+		4C03E1C02ACC6209009A5291 /* CalendarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		4C03E1C12ACC6209009A5291 /* EventFormType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFormType.swift; sourceTree = "<group>"; };
+		4C03E1C42ACC6209009A5291 /* EventFormViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFormViewModel.swift; sourceTree = "<group>"; };
+		4C03E1C62ACC6209009A5291 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		4C03E1C82ACC6209009A5291 /* EventFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventFormView.swift; sourceTree = "<group>"; };
+		4C03E1D32ACC6256009A5291 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		4C03E1D52ACC629C009A5291 /* MealDetailViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewRepresentable.swift; sourceTree = "<group>"; };
+		4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCategoryTableViewRepresentable.swift; sourceTree = "<group>"; };
+		4CB956382ACCD2A500322937 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4CB956392ACCD2A500322937 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCardsView.swift; sourceTree = "<group>"; };
+		4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLottieViewController.swift; sourceTree = "<group>"; };
+		4CB956472ACCF84D00322937 /* intro_MealsApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intro_MealsApp.json; sourceTree = "<group>"; };
+		4CB9564A2ACD089400322937 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		4CB956522ACDEF3F00322937 /* MealsAPIModelResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsAPIModelResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,14 +183,14 @@
 		4C03E1112ACBA98D009A5291 /* MealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CB956492ACD087700322937 /* Coordinator */,
+				4C03E1122ACBA98D009A5291 /* AppDelegate.swift */,
+				4C03E1202ACBA98E009A5291 /* Info.plist */,
+				4C03E1D22ACC621E009A5291 /* Modules */,
 				4C03E19C2ACBDB35009A5291 /* ReusableViews */,
 				4C03E1892ACBB213009A5291 /* NetworkManager */,
 				4C03E1802ACBB1E3009A5291 /* Utilities */,
-				4C03E1672ACBB102009A5291 /* DashboardModule */,
-				4C03E1122ACBA98D009A5291 /* AppDelegate.swift */,
-				4C03E11B2ACBA98E009A5291 /* Assets.xcassets */,
-				4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */,
-				4C03E1202ACBA98E009A5291 /* Info.plist */,
+				4C03E19F2ACBE798009A5291 /* Resources */,
 			);
 			path = MealsApp;
 			sourceTree = "<group>";
@@ -148,7 +198,7 @@
 		4C03E1282ACBA98E009A5291 /* MealsAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				4C03E1292ACBA98E009A5291 /* MealsAppTests.swift */,
+				4CB9564C2ACDCE8F00322937 /* Network */,
 			);
 			path = MealsAppTests;
 			sourceTree = "<group>";
@@ -194,7 +244,9 @@
 			isa = PBXGroup;
 			children = (
 				4C03E1742ACBB102009A5291 /* Cells */,
+				4C03E1B52ACC5D51009A5291 /* MealsCategoryTableViewController.swift */,
 				4C03E1732ACBB102009A5291 /* MealsViewController.swift */,
+				4C03E1A02ACBE807009A5291 /* MainTabBarViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,12 +262,14 @@
 		4C03E1802ACBB1E3009A5291 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4C03E1B22ACC0553009A5291 /* CustomSwiftUIViews */,
 				4C03E1902ACBBDC3009A5291 /* CustomFonts */,
 				4C03E1812ACBB1E3009A5291 /* UIColor+Extension.swift */,
 				4C03E1822ACBB1E3009A5291 /* UIView+Extension.swift */,
 				4C03E1832ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift */,
 				4C03E1842ACBB1E3009A5291 /* CALayer+Extension.swift */,
 				4C03E18C2ACBB238009A5291 /* CallBacks.swift */,
+				4C03E1D32ACC6256009A5291 /* Date+Extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -223,7 +277,8 @@
 		4C03E1892ACBB213009A5291 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
-				4C03E18A2ACBB213009A5291 /* MealsAPI.swift */,
+				4CB956512ACDEF3300322937 /* Model */,
+				4CB956502ACDEEE400322937 /* Network */,
 			);
 			path = NetworkManager;
 			sourceTree = "<group>";
@@ -262,8 +317,228 @@
 			isa = PBXGroup;
 			children = (
 				4C03E16B2ACBB102009A5291 /* MealDetailViewController.swift */,
+				4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		4C03E19F2ACBE798009A5291 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956442ACCF54D00322937 /* Lottie */,
+				4C03E11B2ACBA98E009A5291 /* Assets.xcassets */,
+				4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4C03E1A62ACC04DD009A5291 /* SearchModule */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1A72ACC04DD009A5291 /* ViewModel */,
+				4C03E1A92ACC04DD009A5291 /* View */,
+			);
+			path = SearchModule;
+			sourceTree = "<group>";
+		};
+		4C03E1A72ACC04DD009A5291 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1A82ACC04DD009A5291 /* MealsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C03E1A92ACC04DD009A5291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1AA2ACC04DD009A5291 /* Cell */,
+				4C03E1AC2ACC04DD009A5291 /* SearchView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C03E1AA2ACC04DD009A5291 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1AB2ACC04DD009A5291 /* MealsSearchCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		4C03E1B22ACC0553009A5291 /* CustomSwiftUIViews */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1D72ACC62A1009A5291 /* Representable */,
+				4C03E1B02ACC0541009A5291 /* AsynImage+Extension.swift */,
+			);
+			path = CustomSwiftUIViews;
+			sourceTree = "<group>";
+		};
+		4C03E1B72ACC6209009A5291 /* CalendarModule */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1B82ACC6209009A5291 /* CalendarView */,
+				4C03E1C22ACC6209009A5291 /* EventEditView */,
+			);
+			path = CalendarModule;
+			sourceTree = "<group>";
+		};
+		4C03E1B82ACC6209009A5291 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1B92ACC6209009A5291 /* Manager */,
+				4C03E1BB2ACC6209009A5291 /* View */,
+			);
+			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		4C03E1B92ACC6209009A5291 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1BA2ACC6209009A5291 /* EventManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		4C03E1BB2ACC6209009A5291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1BC2ACC6209009A5291 /* Row */,
+				4C03E1BE2ACC6209009A5291 /* EventsCalendarView.swift */,
+				4C03E1BF2ACC6209009A5291 /* DaysEventListView.swift */,
+				4C03E1C02ACC6209009A5291 /* CalendarView.swift */,
+				4C03E1C12ACC6209009A5291 /* EventFormType.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C03E1BC2ACC6209009A5291 /* Row */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1BD2ACC6209009A5291 /* DayEventViewRow.swift */,
+			);
+			path = Row;
+			sourceTree = "<group>";
+		};
+		4C03E1C22ACC6209009A5291 /* EventEditView */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1C32ACC6209009A5291 /* ViewModel */,
+				4C03E1C52ACC6209009A5291 /* Model */,
+				4C03E1C72ACC6209009A5291 /* View */,
+			);
+			path = EventEditView;
+			sourceTree = "<group>";
+		};
+		4C03E1C32ACC6209009A5291 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1C42ACC6209009A5291 /* EventFormViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4C03E1C52ACC6209009A5291 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1C62ACC6209009A5291 /* Event.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C03E1C72ACC6209009A5291 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1C82ACC6209009A5291 /* EventFormView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C03E1D22ACC621E009A5291 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956372ACCD27500322937 /* SlidingCardsModule */,
+				4C03E1B72ACC6209009A5291 /* CalendarModule */,
+				4C03E1672ACBB102009A5291 /* DashboardModule */,
+				4C03E1A62ACC04DD009A5291 /* SearchModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		4C03E1D72ACC62A1009A5291 /* Representable */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1D52ACC629C009A5291 /* MealDetailViewRepresentable.swift */,
+				4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */,
+			);
+			path = Representable;
+			sourceTree = "<group>";
+		};
+		4CB956372ACCD27500322937 /* SlidingCardsModule */ = {
+			isa = PBXGroup;
+			children = (
+				4CB9563E2ACCD2AC00322937 /* Model */,
+				4CB9563F2ACCD2B200322937 /* View */,
+			);
+			path = SlidingCardsModule;
+			sourceTree = "<group>";
+		};
+		4CB9563E2ACCD2AC00322937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956382ACCD2A500322937 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CB9563F2ACCD2B200322937 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956392ACCD2A500322937 /* CardView.swift */,
+				4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4CB956442ACCF54D00322937 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956472ACCF84D00322937 /* intro_MealsApp.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		4CB956492ACD087700322937 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4CB9564A2ACD089400322937 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		4CB9564C2ACDCE8F00322937 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E1292ACBA98E009A5291 /* MealsAPITests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4CB956502ACDEEE400322937 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4C03E18A2ACBB213009A5291 /* MealsAPI.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4CB956512ACDEF3300322937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956522ACDEF3F00322937 /* MealsAPIModelResponse.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,7 +621,7 @@
 				};
 			};
 			buildConfigurationList = 4C03E10A2ACBA98D009A5291 /* Build configuration list for PBXProject "MealsApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -371,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */,
+				4CB956482ACCF84D00322937 /* intro_MealsApp.json in Resources */,
 				4C03E11F2ACBA98E009A5291 /* LaunchScreen.storyboard in Resources */,
 				4C03E1962ACBD642009A5291 /* Montserrat-Black.otf in Resources */,
 				4C03E1942ACBCBC4009A5291 /* Montserrat-SemiBold.otf in Resources */,
@@ -403,20 +679,44 @@
 			files = (
 				4C03E17F2ACBB102009A5291 /* MealCell.swift in Sources */,
 				4C03E1862ACBB1E3009A5291 /* UIView+Extension.swift in Sources */,
+				4CB956532ACDEF3F00322937 /* MealsAPIModelResponse.swift in Sources */,
+				4CB9564B2ACD089400322937 /* Coordinator.swift in Sources */,
+				4CB9563B2ACCD2A500322937 /* Card.swift in Sources */,
 				4C03E17D2ACBB102009A5291 /* MealsViewController.swift in Sources */,
+				4C03E1CA2ACC6209009A5291 /* DayEventViewRow.swift in Sources */,
+				4C03E1D62ACC629C009A5291 /* MealDetailViewRepresentable.swift in Sources */,
+				4C03E1A12ACBE807009A5291 /* MainTabBarViewController.swift in Sources */,
+				4C03E1CB2ACC6209009A5291 /* EventsCalendarView.swift in Sources */,
+				4C03E1CD2ACC6209009A5291 /* CalendarView.swift in Sources */,
+				4C03E1D02ACC6209009A5291 /* Event.swift in Sources */,
+				4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */,
+				4C03E1D42ACC6256009A5291 /* Date+Extension.swift in Sources */,
+				4CB956432ACCF1B500322937 /* IntroLottieViewController.swift in Sources */,
+				4C03E1C92ACC6209009A5291 /* EventManager.swift in Sources */,
 				4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */,
 				4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */,
 				4C03E18B2ACBB213009A5291 /* MealsAPI.swift in Sources */,
+				4CB9563D2ACCD2A500322937 /* IntroCardsView.swift in Sources */,
+				4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */,
 				4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */,
+				4C03E1D12ACC6209009A5291 /* EventFormView.swift in Sources */,
 				4C03E18D2ACBB238009A5291 /* CallBacks.swift in Sources */,
+				4C03E1D92ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift in Sources */,
+				4C03E1B62ACC5D51009A5291 /* MealsCategoryTableViewController.swift in Sources */,
 				4C03E17B2ACBB102009A5291 /* MealsDetail.swift in Sources */,
+				4C03E1CC2ACC6209009A5291 /* DaysEventListView.swift in Sources */,
+				4C03E1CF2ACC6209009A5291 /* EventFormViewModel.swift in Sources */,
 				4C03E17C2ACBB102009A5291 /* MealsCategory.swift in Sources */,
+				4C03E1AF2ACC04DD009A5291 /* SearchView.swift in Sources */,
+				4C03E1CE2ACC6209009A5291 /* EventFormType.swift in Sources */,
 				4C03E1882ACBB1E3009A5291 /* CALayer+Extension.swift in Sources */,
+				4C03E1AD2ACC04DD009A5291 /* MealsViewModel.swift in Sources */,
 				4C03E1792ACBB102009A5291 /* MealsPresenter.swift in Sources */,
 				4C03E17E2ACBB102009A5291 /* CategoryMealCell.swift in Sources */,
 				4C03E1132ACBA98D009A5291 /* AppDelegate.swift in Sources */,
 				4C03E1782ACBB102009A5291 /* MealDetailViewController.swift in Sources */,
 				4C03E17A2ACBB102009A5291 /* Meals.swift in Sources */,
+				4C03E1AE2ACC04DD009A5291 /* MealsSearchCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +724,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C03E12A2ACBA98E009A5291 /* MealsAppTests.swift in Sources */,
+				4C03E12A2ACBA98E009A5291 /* MealsAPITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,7 +892,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -620,7 +920,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
