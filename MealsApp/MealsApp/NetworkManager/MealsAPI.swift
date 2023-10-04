@@ -129,7 +129,6 @@ class MealsAPI {
             let parsedData = try decoder.decode(MealDetail.self, from: jsonData)
             return parsedData
         } catch {
-            print(error.localizedDescription)
             return nil
         }
     }

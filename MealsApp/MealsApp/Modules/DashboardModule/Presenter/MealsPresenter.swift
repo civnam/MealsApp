@@ -44,7 +44,6 @@ final class MealsPresenter {
         
         self.mealsApiService.getMealsFromAPI(category: category, completion: { [weak self] meals in
             guard let meals = meals else {
-                print("Error MEALS is nil")
                 return
             }
             self?.meals = meals

@@ -22,8 +22,4 @@ class MealsViewModel: ObservableObject {
             }
         })
     }
-    
-    func getStr() {
-        print("XXX", selection)
-    }
 }
