@@ -66,6 +66,7 @@ class MealDetailViewController: UIViewController {
     
     private var mealImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.isHidden = true
         imageView.contentMode = .scaleToFill
         imageView.clipsToBounds = true
         imageView.layer.applyWhiteShadow()
@@ -80,6 +81,7 @@ class MealDetailViewController: UIViewController {
         label.text = text
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.isHidden = true
         label.backgroundColor = .customYellow2
         label.textAlignment = .center
         label.layer.applyWhiteShadow()
@@ -95,6 +97,7 @@ class MealDetailViewController: UIViewController {
         label.font = UIFont(name: "MontserratAlternates-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.layer.isHidden = true
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
@@ -108,6 +111,7 @@ class MealDetailViewController: UIViewController {
         label.font = UIFont(name: "MontserratAlternates-Bold", size: 24)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.layer.masksToBounds = true
+        label.isHidden = true
         label.textAlignment = .left
         label.textColor = .white
         label.numberOfLines = 0
@@ -130,6 +134,7 @@ class MealDetailViewController: UIViewController {
         let label = UILabel()
         label.text = "Tutorial for the meal"
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isHidden = true
         return label
     }()
     
@@ -137,6 +142,7 @@ class MealDetailViewController: UIViewController {
         let view = UIView(frame: .zero)
         view.backgroundColor = .none
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.isHidden = true
         view.layer.applyWhiteShadow()
         return view
     }()
@@ -155,6 +161,7 @@ class MealDetailViewController: UIViewController {
     private var videoView: UIView = {
         let view = UIView(frame: .zero)
         view.backgroundColor = .customYellow2
+        view.isHidden = true
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.applyWhiteShadow()
         view.backgroundColor = .none
@@ -196,8 +203,9 @@ class MealDetailViewController: UIViewController {
     
     private func setupViewConfig() {
         
-        customView()
-        hideViews()
+        if !calendarEntryPoint {
+            customView()
+        }
     }
     
     private func customView() {
@@ -208,17 +216,6 @@ class MealDetailViewController: UIViewController {
     private func setupTabBar(fromWillAppear: Bool) {
         
         self.navigationController?.tabBarController?.tabBar.isHidden = fromWillAppear ? true : false
-    }
-    
-    private func hideViews() {
-        
-        mealImage.isHidden = true
-        mealTitleLbl.isHidden = true
-        mealIngredientsLbl.isHidden = true
-        mainView.isHidden = true
-        mealInstructionsLbl.isHidden = true
-        videoView.isHidden = true
-        view.isUserInteractionEnabled = false
     }
     
     private func showViews() {
