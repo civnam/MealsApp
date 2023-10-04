@@ -18,7 +18,7 @@ struct CardView: View {
             Image("\(card.image)")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 300, height: 400, alignment: .center)
+                .frame(width: 300, height: 300, alignment: .center)
                 .padding()
                 .cornerRadius(30)
                 .background(Color.customYellow2.opacity(0.8))

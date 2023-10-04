@@ -37,7 +37,7 @@ struct EventFormView: View {
                         .opacity(mealNameDidChange ? 1 : 0.5)
                     
                     NavigationLink(destination: {
-                        SearchView(viewModel: MealsViewModel(), calendarEntryPoint: true, completion: { name, id in
+                        SearchView(categorySelected: categorySelected.rawValue, viewModel: MealsViewModel(), calendarEntryPoint: true, completion: { name, id in
                             viewModel.mealName = name
                             idMeal = id
                             mealNameDidChange = true

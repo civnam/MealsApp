@@ -46,8 +46,7 @@ struct IntroCardsView: View {
             .indexViewStyle(.page(backgroundDisplayMode: .never))
             .tabViewStyle(PageTabViewStyle())
             .onAppear {
-                dotAppearance.currentPageIndicatorTintColor = .customBlue1
-                dotAppearance.pageIndicatorTintColor = .customBlue1
+                dotAppearance.alpha = 0
             }
         }
         .ignoresSafeArea()

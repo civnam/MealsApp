@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State private var categorySelected: String = "Click Here"
+    @State var categorySelected: String = "Click Here"
     @State private var search = ""
     @StateObject var viewModel: MealsViewModel
     var categories: [MealsCategory] = MealsCategory.allCases
@@ -52,7 +52,7 @@ struct SearchView: View {
                             })
                         }
                     } label: {
-                        Text(categorySelected)
+                        Text(categorySelected.uppercased())
                     }
                 }
                 .padding(.top, -35)
@@ -69,7 +69,7 @@ struct SearchView: View {
             }
         }
         .onAppear {
-            viewModel.getMeals(category: .beef)
+            viewModel.getMeals(category: MealsCategory(rawValue: categorySelected) ?? .beef)
         }
     }
 }
