@@ -1,6 +1,6 @@
 //
 //  IntroCardsView.swift
-//  SlidingCardsView
+//  MealsApp
 //
 //  Created by Isaac Dimas on 03/10/23.
 //

@@ -39,10 +39,9 @@ class MealsViewController: UIViewController {
     private var logoImageVw: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.layer.cornerRadius = 15
-        imageView.image = UIImage(named: "MealAppLogo")
+        imageView.image = UIImage(named: "ForkKnife")
         imageView.layer.applyWhiteShadow()
         imageView.layer.borderWidth = 0
         return imageView

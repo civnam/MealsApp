@@ -340,6 +340,7 @@ class MealDetailViewController: UIViewController {
         
         self.heightInstructionsTxtVw = mealInstructionsTxtVw.heightAnchor.constraint(equalToConstant: 200)
         self.heightInstructionsTxtVw?.isActive = true
+        
         mealInstructionsTxtVw.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
         mealInstructionsTxtVw.trailingAnchor.constraint(equalTo: viewOfScrollView.trailingAnchor, constant: -16).isActive = true
         mealInstructionsTxtVw.topAnchor.constraint(equalTo: mealInstructionsLbl.bottomAnchor, constant: 8).isActive = true
