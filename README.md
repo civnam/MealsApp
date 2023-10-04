@@ -7,7 +7,7 @@ In Meals App you can also track a schedule in a calendar where you can put on th
 
 # Installation
 
-Go the path where the Podfile in the terminal and execute the pod install command
+Go the path where the Podfile is in the terminal and execute the pod install command
 The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI features that were used
 
 # Features in the Meals App
