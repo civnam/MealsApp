@@ -8,6 +8,7 @@
   # Pods for MealsApp
   target 'MealsApp' do
      pod 'lottie-ios'
+     pod 'youtube-ios-player-helper'
   end
 
   target 'MealsAppTests' do
