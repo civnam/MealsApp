@@ -46,7 +46,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func goToDashboard(tabBarController: MainTabBarViewController) {
         
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: firstTimeUserApp ? 1.5 : 0, animations: {
             self.window?.rootViewController = tabBarController
             self.window?.makeKeyAndVisible()
         })

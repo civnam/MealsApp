@@ -10,6 +10,7 @@ import Foundation
 class MealsViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var selection: Int = 0
+    @Published var callFromApiIsLoading: Bool = true
     
     private var mealsApiService: MealsAPI = MealsAPI()
     
@@ -17,6 +18,7 @@ class MealsViewModel: ObservableObject {
         mealsApiService.getMealsFromAPI(category: category, completion: { meals in
             DispatchQueue.main.async {
                 self.meals = meals ?? []
+                self.callFromApiIsLoading = false
             }
         })
     }
