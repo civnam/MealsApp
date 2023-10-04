@@ -22,3 +22,8 @@ struct Meal: Decodable, Identifiable {
         self.idMeal ?? ""
     }
 }
+
+extension Meal {
+    
+    static let mealModelMock = Meal(strMeal: "Apam balik", strMealThumb: "https://www.themealdb.com/images/media/meals/adxcbq1619787919.jpg", idMeal: "53049")
+}

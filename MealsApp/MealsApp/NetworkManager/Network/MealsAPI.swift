@@ -10,21 +10,27 @@ import Foundation
 class MealsAPI {
     
     // MARK: - Atributes
+    private var urlSession: URLSession
     private let mealsAPIUrl: String = "https://themealdb.com/api/json/v1/1/filter.php?c="
     private let mealDetailAPIUrl: String = "https://themealdb.com/api/json/v1/1/lookup.php?i="
     
+    // MARK: - Init
+    init(urlSession: URLSession = .shared) {
+        self.urlSession = urlSession
+    }
+    
     // MARK: - Methods
-    func getMealsFromAPI(category: MealsCategory, completion: @escaping ( [Meal]? ) -> Void) {
+    func getMealsFromAPI(category: MealsCategory?, completion: @escaping ( [Meal]?, MealsAPIStatusCode ) -> Void) {
         
-        let urlStr = mealsAPIUrl + category.categoryName
+        let urlStr = mealsAPIUrl + (category?.categoryName ?? "")
         
         guard let url = URL(string: urlStr) else {
-            completion(nil)
+            completion(nil, .notFound)
             return
         }
         
         let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+        let task = urlSession.dataTask(with: request, completionHandler: { data, response, error in
             
             guard let response = response as? HTTPURLResponse else { return }
             
@@ -34,10 +40,10 @@ class MealsAPI {
                     if let data = data {
                         let decoder = JSONDecoder()
                         let parsedData = try decoder.decode(MealsAPIResponse.self, from: data)
-                        completion(parsedData.meals)
+                        completion(parsedData.meals, .success)
                     }
                 } catch {
-                    completion(nil)
+                    completion(nil, .success)
                 }
             }
         })
@@ -45,17 +51,17 @@ class MealsAPI {
         task.resume()
     }
     
-    func getMealDetailFromAPI(idMeal: String, completion: @escaping ( MealDetail? ) -> Void) {
+    func getMealDetailFromAPI(idMeal: String, completion: @escaping ( MealDetail?, MealsAPIStatusCode ) -> Void) {
         
         let urlStr = mealDetailAPIUrl + idMeal
         
         guard let url = URL(string: urlStr) else {
-            completion(nil)
+            completion(nil, .notFound)
             return
         }
         
         let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+        let task = urlSession.dataTask(with: request, completionHandler: { data, response, error in
             
             guard let response = response as? HTTPURLResponse else { return }
             
@@ -67,10 +73,10 @@ class MealsAPI {
                         let jsonDict = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed) as? [String: Any]
                         
                         let mealDetail = self.getMealDetail(jsonDict: jsonDict)
-                        completion(mealDetail)
+                        completion(mealDetail, .success)
                     }
                 } catch {
-                    completion(nil)
+                    completion(nil, .success)
                 }
             }
         })

@@ -42,7 +42,7 @@ final class MealsPresenter {
     
     func getAllMeals(category: MealsCategory = .dessert) {
         
-        self.mealsApiService.getMealsFromAPI(category: category, completion: { [weak self] meals in
+        self.mealsApiService.getMealsFromAPI(category: category, completion: { [weak self] meals, statusCode in
             guard let meals = meals else {
                 return
             }
@@ -67,11 +67,11 @@ final class MealsPresenter {
     
     func setMealDetail(idMeal: String) {
         
-        self.mealsApiService.getMealDetailFromAPI(idMeal: idMeal) { mealDetail in
-            self.mealDetail = mealDetail
-            self.mealIngredients = self.mealDetail?.arrIngredients
-            self.mealMeasures = self.mealDetail?.arrMeasures
-            self.mealsViewDelegate?.refreshMealsData()
+        self.mealsApiService.getMealDetailFromAPI(idMeal: idMeal) { [weak self] mealDetail, statusCode in
+            self?.mealDetail = mealDetail
+            self?.mealIngredients = self?.mealDetail?.arrIngredients
+            self?.mealMeasures = self?.mealDetail?.arrMeasures
+            self?.mealsViewDelegate?.refreshMealsData()
         }
     }
     
