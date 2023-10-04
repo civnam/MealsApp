@@ -8,3 +8,4 @@
 import Foundation
 
 typealias Completion = (String, String) -> Void
+typealias Callback = (Bool) -> Void

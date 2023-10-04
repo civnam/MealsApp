@@ -51,6 +51,9 @@
 		4C03E1D42ACC6256009A5291 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D32ACC6256009A5291 /* Date+Extension.swift */; };
 		4C03E1D62ACC629C009A5291 /* MealDetailViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D52ACC629C009A5291 /* MealDetailViewRepresentable.swift */; };
 		4C03E1D92ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */; };
+		4CB9563B2ACCD2A500322937 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956382ACCD2A500322937 /* Card.swift */; };
+		4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956392ACCD2A500322937 /* CardView.swift */; };
+		4CB9563D2ACCD2A500322937 /* IntroCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,9 @@
 		4C03E1D32ACC6256009A5291 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		4C03E1D52ACC629C009A5291 /* MealDetailViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailViewRepresentable.swift; sourceTree = "<group>"; };
 		4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealsCategoryTableViewRepresentable.swift; sourceTree = "<group>"; };
+		4CB956382ACCD2A500322937 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		4CB956392ACCD2A500322937 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCardsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +446,7 @@
 		4C03E1D22ACC621E009A5291 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				4CB956372ACCD27500322937 /* SlidingCardsModule */,
 				4C03E1B72ACC6209009A5291 /* CalendarModule */,
 				4C03E1672ACBB102009A5291 /* DashboardModule */,
 				4C03E1A62ACC04DD009A5291 /* SearchModule */,
@@ -454,6 +461,32 @@
 				4C03E1D82ACC62DF009A5291 /* MealsCategoryTableViewRepresentable.swift */,
 			);
 			path = Representable;
+			sourceTree = "<group>";
+		};
+		4CB956372ACCD27500322937 /* SlidingCardsModule */ = {
+			isa = PBXGroup;
+			children = (
+				4CB9563E2ACCD2AC00322937 /* Model */,
+				4CB9563F2ACCD2B200322937 /* View */,
+			);
+			path = SlidingCardsModule;
+			sourceTree = "<group>";
+		};
+		4CB9563E2ACCD2AC00322937 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956382ACCD2A500322937 /* Card.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4CB9563F2ACCD2B200322937 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956392ACCD2A500322937 /* CardView.swift */,
+				4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -593,6 +626,7 @@
 			files = (
 				4C03E17F2ACBB102009A5291 /* MealCell.swift in Sources */,
 				4C03E1862ACBB1E3009A5291 /* UIView+Extension.swift in Sources */,
+				4CB9563B2ACCD2A500322937 /* Card.swift in Sources */,
 				4C03E17D2ACBB102009A5291 /* MealsViewController.swift in Sources */,
 				4C03E1CA2ACC6209009A5291 /* DayEventViewRow.swift in Sources */,
 				4C03E1D62ACC629C009A5291 /* MealDetailViewRepresentable.swift in Sources */,
@@ -600,11 +634,13 @@
 				4C03E1CB2ACC6209009A5291 /* EventsCalendarView.swift in Sources */,
 				4C03E1CD2ACC6209009A5291 /* CalendarView.swift in Sources */,
 				4C03E1D02ACC6209009A5291 /* Event.swift in Sources */,
+				4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */,
 				4C03E1D42ACC6256009A5291 /* Date+Extension.swift in Sources */,
 				4C03E1C92ACC6209009A5291 /* EventManager.swift in Sources */,
 				4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */,
 				4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */,
 				4C03E18B2ACBB213009A5291 /* MealsAPI.swift in Sources */,
+				4CB9563D2ACCD2A500322937 /* IntroCardsView.swift in Sources */,
 				4C03E1B12ACC0541009A5291 /* AsynImage+Extension.swift in Sources */,
 				4C03E1852ACBB1E3009A5291 /* UIColor+Extension.swift in Sources */,
 				4C03E1D12ACC6209009A5291 /* EventFormView.swift in Sources */,
