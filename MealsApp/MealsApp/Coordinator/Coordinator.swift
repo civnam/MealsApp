@@ -42,9 +42,9 @@ final class Coordinator: CoordinatorDelegate {
     
     private func pushIntroLottieViewController() {
         
-        self.introLottieViewController = IntroLottieViewController(completion: { _ in
+        self.introLottieViewController = IntroLottieViewController(completion: { [weak self] _ in
             
-            self.initNavigationApp()
+            self?.initNavigationApp()
         })
         self.introLottieViewController?.coordinatorDelegate = self
         self.navigationController.pushViewController(self.introLottieViewController ?? UIViewController(), animated: true)
@@ -57,9 +57,9 @@ final class Coordinator: CoordinatorDelegate {
             self.firstTimeUserApp = UserDefaults.standard.object(forKey: "isFirstTimeUserApp") as? Bool ?? false
         }
         
-        self.completion = { _ in
-            self.dismissView(animated: false)
-            self.goToDashboard()
+        self.completion = { [weak self ] _ in
+            self?.dismissView(animated: false)
+            self?.goToDashboard()
         }
         
         if firstTimeUserApp {

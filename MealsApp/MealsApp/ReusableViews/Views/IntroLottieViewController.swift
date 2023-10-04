@@ -72,8 +72,8 @@ class IntroLottieViewController: UIViewController {
     private func setupLottieAnimation() {
         
         lottieView.contentMode = .scaleAspectFit
-        lottieView.play(completion: { completed in
-            self.completion(completed)
+        lottieView.play(completion: { [weak self] completed in
+            self?.completion(completed)
         })
     }
     
