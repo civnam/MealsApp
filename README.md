@@ -5,6 +5,11 @@ Victor Isaac Dimas Moreno
 Meals App is an app where you can look up for the best meals recipes, in there you can find the ingredients, measures, instructions and youtube video tutorial (if existing) of many different kinds of meals like pasta, beef, etc.
 In Meals App you can also track a schedule in a calendar where you can put on the meals that you were looking for.
 
+# Instalation
+
+Go the path where the Podfile in the terminal and execute the pod install command
+The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI features that were used
+
 # Features in the Meals App
 - Dashboard Module
 
