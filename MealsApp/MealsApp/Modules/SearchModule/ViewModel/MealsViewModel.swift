@@ -15,10 +15,10 @@ class MealsViewModel: ObservableObject {
     private var mealsApiService: MealsAPI = MealsAPI()
     
     func getMeals(category: MealsCategory) {
-        mealsApiService.getMealsFromAPI(category: category, completion: { meals in
+        mealsApiService.getMealsFromAPI(category: category, completion: { [weak self] meals, statusCode in
             DispatchQueue.main.async {
-                self.meals = meals ?? []
-                self.callFromApiIsLoading = false
+                self?.meals = meals ?? []
+                self?.callFromApiIsLoading = false
             }
         })
     }
