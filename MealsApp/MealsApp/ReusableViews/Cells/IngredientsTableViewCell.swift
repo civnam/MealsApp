@@ -13,6 +13,7 @@ class IngredientsCell: UITableViewCell {
     
     private var ingredientLbl: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
@@ -20,6 +21,7 @@ class IngredientsCell: UITableViewCell {
     
     private var measureLbl: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

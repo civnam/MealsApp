@@ -91,13 +91,13 @@ struct Event: Identifiable {
     // Data to be used in the preview
     static var sampleEvents: [Event] {
         return [
-            Event(eventType: .beef, date: Date().diff(numDays: 0), note: "Take dog to groomers"),
-            Event(date: Date().diff(numDays: -1), note: "Get gift for Emily"),
-            Event(eventType: .breakfast, date: Date().diff(numDays: 6), note: "File tax returns."),
-            Event(eventType: .dessert, date: Date().diff(numDays: 2), note: "Dinner party at Dave and Janet's"),
-            Event(eventType: .lamb, date: Date().diff(numDays: -1), note: "Complete Audit."),
-            Event(eventType: .goat, date: Date().diff(numDays: -3), note: "Football Game"),
-            Event(date: Date().diff(numDays: -4), note: "Plan for winter vacation.")
+            Event(eventType: .dessert, date: Date().diff(numDays: 0), note: "Apam balik", idMeal: "53049"),
+            Event(date: Date().diff(numDays: -1), note: "Bakewell tart", idMeal: "52767"),
+            Event(eventType: .seafood, date: Date().diff(numDays: 6), note: "Escovitch Fish.", idMeal: "52944"),
+            Event(eventType: .seafood, date: Date().diff(numDays: 2), note: "Grilled Portuguese sardines", idMeal: "53041"),
+            Event(eventType: .lamb, date: Date().diff(numDays: -1), note: "Kapsalon", idMeal: "52769"),
+            Event(eventType: .goat, date: Date().diff(numDays: -3), note: "Mbuzi Choma (Roasted Goat)", idMeal: "52968"),
+            Event(date: Date().diff(numDays: -4), note: "Beef and Mustard Pie", idMeal: "52874")
         ]
     }
 }
