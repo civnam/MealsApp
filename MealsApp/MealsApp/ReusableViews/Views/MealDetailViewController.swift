@@ -7,11 +7,12 @@
 
 import UIKit
 import WebKit
+import youtube_ios_player_helper
 
 class MealDetailViewController: UIViewController {
 
     var heightTableView: NSLayoutConstraint?
-    var heightCollectionView: NSLayoutConstraint?
+    var heightVideoView: NSLayoutConstraint?
     var heightScrollView: NSLayoutConstraint?
     var heightInstructionsTxtVw: NSLayoutConstraint?
     var heightMealImage: NSLayoutConstraint?
@@ -21,6 +22,7 @@ class MealDetailViewController: UIViewController {
     var idMeal: String?
     var completion: Completion?
     private var presenter = MealsPresenter(mealsApiService: MealsAPI())
+    private var youtubeUrl = "https://www.youtube.com/watch?v="
     
     var calendarEntryPoint: Bool = false
 
@@ -152,18 +154,20 @@ class MealDetailViewController: UIViewController {
     
     private var videoView: UIView = {
         let view = UIView(frame: .zero)
+        view.backgroundColor = .customYellow2
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.applyWhiteShadow()
         view.backgroundColor = .none
         return view
     }()
     
-    private var playerView: WKWebView = {
-        let webView = WKWebView()
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        webView.layer.applyWhiteShadow()
-        webView.layer.masksToBounds = true
-        return webView
+    private var playerView: YTPlayerView = {
+        let playerView = YTPlayerView()
+        playerView.load(withVideoId: "")
+        playerView.translatesAutoresizingMaskIntoConstraints = false
+        playerView.layer.applyWhiteShadow()
+        playerView.layer.masksToBounds = true
+        return playerView
     }()
     
     override func viewDidLoad() {
@@ -278,9 +282,8 @@ class MealDetailViewController: UIViewController {
     }
     
     private func updatePlayerVideo(strUrl: String) {
-        guard let url = URL(string: "https://www.youtube.com/embed/watch?v=6R8ffRRJcrg") else { return }
-        let youtubeRequest = URLRequest(url: url)
-        playerView.load(youtubeRequest)
+        let videoId = strUrl.replacingOccurrences(of: youtubeUrl, with: "")
+        playerView.load(withVideoId: videoId)
     }
     
     private func setupConstraints() {
@@ -340,6 +343,7 @@ class MealDetailViewController: UIViewController {
         
         self.heightInstructionsTxtVw = mealInstructionsTxtVw.heightAnchor.constraint(equalToConstant: 200)
         self.heightInstructionsTxtVw?.isActive = true
+        
         mealInstructionsTxtVw.leadingAnchor.constraint(equalTo: viewOfScrollView.leadingAnchor, constant: 16).isActive = true
         mealInstructionsTxtVw.trailingAnchor.constraint(equalTo: viewOfScrollView.trailingAnchor, constant: -16).isActive = true
         mealInstructionsTxtVw.topAnchor.constraint(equalTo: mealInstructionsLbl.bottomAnchor, constant: 8).isActive = true
@@ -353,8 +357,8 @@ class MealDetailViewController: UIViewController {
         playerView.leadingAnchor.constraint(equalTo: videoView.leadingAnchor, constant: 0).isActive = true
         playerView.trailingAnchor.constraint(equalTo: videoView.trailingAnchor, constant: 0).isActive = true
 
-        self.heightCollectionView = videoView.heightAnchor.constraint(equalToConstant: 150)
-        self.heightCollectionView?.isActive = true
+        self.heightVideoView = videoView.heightAnchor.constraint(equalToConstant: 250)
+        self.heightVideoView?.isActive = true
     }
     
     private func setupTopConstraints() {
@@ -388,7 +392,7 @@ class MealDetailViewController: UIViewController {
         let heightTableView = self.heightTableView?.constant ?? 0
         let heightMealIngredientsLbl = self.heightMealIngredientsLbl?.constant ?? 0
         let heightInstructionsTxtVw = self.heightInstructionsTxtVw?.constant ?? 0
-        let heightCollectionView = self.heightCollectionView?.constant ?? 0
+        let heightCollectionView = self.heightVideoView?.constant ?? 0
 
         let screenSize = UIScreen.main.bounds
 

@@ -15,7 +15,7 @@ class MainTabBarViewController : UITabBarController {
     private var calendarViewController: UIViewController
     
     //MARK: - Init of class
-    init(dashboardViewController: UIViewController, searchViewController: UIViewController, calendarViewController: UIViewController) {
+    init(dashboardViewController: UIViewController = UIViewController(), searchViewController: UIViewController = UIViewController(), calendarViewController: UIViewController = UIViewController()) {
         self.dashboardViewController = dashboardViewController
         self.searchViewController = searchViewController
         self.calendarViewController = calendarViewController
@@ -30,7 +30,7 @@ class MainTabBarViewController : UITabBarController {
        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
         btn.setTitle("", for: .normal)
         btn.contentMode = .scaleAspectFit
-        btn.backgroundColor = UIColor.customOrange2
+        btn.backgroundColor = UIColor.white
         btn.layer.cornerRadius = 30
         btn.layer.shadowColor = UIColor.black.cgColor
         btn.layer.shadowOpacity = 0.2

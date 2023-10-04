@@ -49,7 +49,6 @@ extension UIColor {
 
 extension Color {
     
-    //static let customWhite1: Color = Color(red: 235/255, green: 229/255, blue: 206/255)
     static let customRed1 = Color(red: 42/255, green: 8/255, blue: 7/255)
     static let customRed2 = Color(red: 123/255, green: 54/255, blue: 34/255)
     static let customYellow1 = Color(red: 184/255, green: 136/255, blue: 73/255)

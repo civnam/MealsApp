@@ -36,23 +36,6 @@ struct EventFormView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .opacity(mealNameDidChange ? 1 : 0.5)
                     
-//                    NavigationLink(destination:
-//                                    MealsCategoryTableViewRepresentable(category: categorySelected.rawValue, completion: { name, id in
-//                        viewModel.mealName = name
-//                        idMeal = id
-//                        mealNameDidChange = true
-//                    })
-//                        .navigationBarTitleDisplayMode(.inline)
-//                        .toolbarBackground(.visible, for: .navigationBar)
-//                        .edgesIgnoringSafeArea(.all)
-//                                   ,
-//                                   label: {
-//                        Image(systemName: "plus.circle.fill")
-//                            .imageScale(.large)
-//                            .frame(maxWidth: .infinity, alignment: .center)
-//                            .foregroundColor(.blue)
-//                    })
-                    
                     NavigationLink(destination: {
                         SearchView(viewModel: MealsViewModel(), calendarEntryPoint: true, completion: { name, id in
                             viewModel.mealName = name

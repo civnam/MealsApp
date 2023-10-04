@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 55;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -54,6 +54,9 @@
 		4CB9563B2ACCD2A500322937 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956382ACCD2A500322937 /* Card.swift */; };
 		4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956392ACCD2A500322937 /* CardView.swift */; };
 		4CB9563D2ACCD2A500322937 /* IntroCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */; };
+		4CB956432ACCF1B500322937 /* IntroLottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */; };
+		4CB956482ACCF84D00322937 /* intro_MealsApp.json in Resources */ = {isa = PBXBuildFile; fileRef = 4CB956472ACCF84D00322937 /* intro_MealsApp.json */; };
+		4CB9564B2ACD089400322937 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB9564A2ACD089400322937 /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,9 @@
 		4CB956382ACCD2A500322937 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		4CB956392ACCD2A500322937 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		4CB9563A2ACCD2A500322937 /* IntroCardsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCardsView.swift; sourceTree = "<group>"; };
+		4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroLottieViewController.swift; sourceTree = "<group>"; };
+		4CB956472ACCF84D00322937 /* intro_MealsApp.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intro_MealsApp.json; sourceTree = "<group>"; };
+		4CB9564A2ACD089400322937 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +181,7 @@
 		4C03E1112ACBA98D009A5291 /* MealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				4CB956492ACD087700322937 /* Coordinator */,
 				4C03E1122ACBA98D009A5291 /* AppDelegate.swift */,
 				4C03E1202ACBA98E009A5291 /* Info.plist */,
 				4C03E1D22ACC621E009A5291 /* Modules */,
@@ -307,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				4C03E16B2ACBB102009A5291 /* MealDetailViewController.swift */,
+				4CB956422ACCF1B500322937 /* IntroLottieViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -314,6 +322,7 @@
 		4C03E19F2ACBE798009A5291 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4CB956442ACCF54D00322937 /* Lottie */,
 				4C03E11B2ACBA98E009A5291 /* Assets.xcassets */,
 				4C03E11D2ACBA98E009A5291 /* LaunchScreen.storyboard */,
 			);
@@ -489,6 +498,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4CB956442ACCF54D00322937 /* Lottie */ = {
+			isa = PBXGroup;
+			children = (
+				4CB956472ACCF84D00322937 /* intro_MealsApp.json */,
+			);
+			path = Lottie;
+			sourceTree = "<group>";
+		};
+		4CB956492ACD087700322937 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				4CB9564A2ACD089400322937 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -569,7 +594,7 @@
 				};
 			};
 			buildConfigurationList = 4C03E10A2ACBA98D009A5291 /* Build configuration list for PBXProject "MealsApp" */;
-			compatibilityVersion = "Xcode 14.0";
+			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -594,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C03E19A2ACBD8B7009A5291 /* Raleway-Medium.ttf in Resources */,
+				4CB956482ACCF84D00322937 /* intro_MealsApp.json in Resources */,
 				4C03E11F2ACBA98E009A5291 /* LaunchScreen.storyboard in Resources */,
 				4C03E1962ACBD642009A5291 /* Montserrat-Black.otf in Resources */,
 				4C03E1942ACBCBC4009A5291 /* Montserrat-SemiBold.otf in Resources */,
@@ -626,6 +652,7 @@
 			files = (
 				4C03E17F2ACBB102009A5291 /* MealCell.swift in Sources */,
 				4C03E1862ACBB1E3009A5291 /* UIView+Extension.swift in Sources */,
+				4CB9564B2ACD089400322937 /* Coordinator.swift in Sources */,
 				4CB9563B2ACCD2A500322937 /* Card.swift in Sources */,
 				4C03E17D2ACBB102009A5291 /* MealsViewController.swift in Sources */,
 				4C03E1CA2ACC6209009A5291 /* DayEventViewRow.swift in Sources */,
@@ -636,6 +663,7 @@
 				4C03E1D02ACC6209009A5291 /* Event.swift in Sources */,
 				4CB9563C2ACCD2A500322937 /* CardView.swift in Sources */,
 				4C03E1D42ACC6256009A5291 /* Date+Extension.swift in Sources */,
+				4CB956432ACCF1B500322937 /* IntroLottieViewController.swift in Sources */,
 				4C03E1C92ACC6209009A5291 /* EventManager.swift in Sources */,
 				4C03E1772ACBB102009A5291 /* IngredientsTableViewCell.swift in Sources */,
 				4C03E1872ACBB1E3009A5291 /* NSMutableAttributedString+Extension.swift in Sources */,
