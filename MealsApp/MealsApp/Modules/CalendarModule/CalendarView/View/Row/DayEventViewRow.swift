@@ -19,7 +19,7 @@ struct DayEventViewRow: View {
         ZStack {
 
             NavigationLink("", destination:
-                            MealDetailViewRepresentable(idMeal: event.idMeal)
+                            MealDetailViewRepresentable(idMeal: event.idMeal, calendarEntryPoint: true)
                             .edgesIgnoringSafeArea(.all)
             )
             
