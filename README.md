@@ -9,7 +9,7 @@ Youtube video: https://youtu.be/-ay8QIFYHDY
 
 # Installation
 
-Go the path where the Podfile is and execute the pod install command. Then open the .workspace file generated
+Go to the path where the Podfile is and execute the pod install command. Then open the .workspace file generated
 
 
 The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI features that were used
@@ -25,7 +25,7 @@ The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI fea
 
 - Tracking Food Calendar Module
   
-  The user can look up for recipes in this section and added as an event to the calendar, also the user can access to the recipe saved in that particular day for showing the detail of the meal.
+  The user can look up for recipes in this section and added them as an event to the calendar, also the user can access to the recipe saved in that particular day for showing the detail of the meal.
 
 # Frameworks used in the Meals App
 
@@ -57,7 +57,7 @@ The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI fea
 # More Technical features
 
 - JSONDecoder and JSONSerialization used for parsing the data of the API
-- UserDefaults singleton used for storing a boolean of the user first time trying the app, if it's false then sliding cards are showed
+- UserDefaults singleton used for storing a boolean of the user first time trying the app, if it's the first time then intro sliding cards are showed
 - Responsive height of the scrollview depending of the size of the elements of the view and thus the size of the screen
 - Dedicated Networking layer
 - Cache for UIImageView
