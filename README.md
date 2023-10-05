@@ -5,9 +5,13 @@ Victor Isaac Dimas Moreno
 Meals App is an app where you can look up for the best meals recipes, in there you can find the ingredients, measures, instructions and youtube video tutorial (if existing) of many different kinds of meals like pasta, beef, etc.
 In Meals App you can also track a schedule in a calendar where you can put on the meals that you were looking for.
 
+Youtube video: https://youtu.be/-ay8QIFYHDY
+
 # Installation
 
-Go the path where the Podfile is in the terminal and execute the pod install command
+Go the path where the Podfile is and execute the pod install command. Then open the .workspace file generated
+
+
 The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI features that were used
 
 # Features in the Meals App
@@ -53,6 +57,8 @@ The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI fea
 # More Technical features
 
 - JSONDecoder and JSONSerialization used for parsing the data of the API
+- UserDefaults singleton used for storing a boolean of the user first time trying the app, if it's false then sliding cards are showed
+- Responsive height of the scrollview depending of the size of the elements of the view and thus the size of the screen
 - Dedicated Networking layer
 - Cache for UIImageView
 - Management of memory leaks with [weak self]
@@ -64,4 +70,4 @@ The app was tested in Xcode 14.3 and supports iOS 16+ because of the SwiftUI fea
 - Added reusable views like the detail view of the meal
 - Added custom font for the text in the app
 - Added extensions of the different objects in Foundatin, UIKit and SwiftUI for reusing code
-- Applied GitFlow for this repo by using the pattern Main -> Dev -> Task
+- Applied GitFlow for this repo by using the flow: Main -> Dev -> Task
